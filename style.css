@@ -1,0 +1,226 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Josefin Sans', sans-serif;
+}
+body{
+    background: linear-gradient(rgb(169, 240, 128),rgb(213, 247, 149));
+    display: flex;
+    flex-direction: column;
+}
+.noFill{
+    fill:none ;
+}
+
+header {
+    width: 100%;
+    height: 80px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 5;
+    background: #124d40;
+    border-bottom-right-radius: 15px;
+    border-bottom-left-radius: 15px;
+    box-shadow: 0px 2px 5px rgba(44,62,80,0.15);
+   
+}
+
+header input{
+    width: 95%;
+    height: 50px;
+    margin: 15px 2.5%;
+    padding: 0 60px 0 0;
+    float: left;
+    background: rgba(255, 255, 255, 0.2);
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    border-top-right-radius: 25px;
+    border-bottom-right-radius: 25px;
+    border: 0px;
+    box-shadow: none;
+    outline: none;
+    color: white;
+    font-size: 17px;
+    font-weight: 400;
+    text-indent: 20px;
+
+}
+header input::placeholder{
+    color: white;
+    font-size: 20px;
+    text-indent: 20px;
+
+}
+header button{
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    border-radius: 25px;
+    z-index: 2;
+    background: white;
+    border: 0;
+    box-shadow: none;
+    outline: none;
+}
+header button svg{
+    width: 16px;
+    height: 16px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin: -8px 0 0 -8px;
+    cursor: pointer;
+}
+header button svg .fill{
+fill: #25b99a;
+}
+.completeMsg{
+    display: block;
+    padding: 30px;
+}
+.completeMsgNotDisplay{
+    display: none;
+}
+.lists_todo{
+    width: 90%;
+   
+    padding-top: 80px;
+    margin: 30px auto;
+}
+.lists_todo li{
+    background: whitesmoke;
+    min-height: 50px;
+    width: 100%;
+    font-size: 16px;
+    
+    font-weight: 500;
+   color: #444;
+   line-height: 22px;
+   border-radius: 7px;
+   position: relative;
+   box-shadow: 0px 2px 4px rgba(44,62,80,0.10);
+   margin:0 0 15px 0;
+   padding:14px 100px 14px 14px ;
+
+}
+.lists_todo:last-child{
+    margin: 0;
+}
+.lists_todo li .buttons{
+    width: 101px;
+    height: 50px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: flex;
+    flex-direction: row;
+}
+.lists_todo li .buttons button{
+    width: 50px;
+    height: 50px;
+    background: none;
+    background-origin: 0px;
+    box-shadow: none;
+    outline: none;
+    border: none;
+    cursor: pointer;
+}
+
+.lists_todo li .buttons .remove  svg{
+    width: 22px;
+    height: 22px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin: -11px 0 0 -37px;
+    
+   
+}
+.lists_todo li .buttons .remove svg .fill{
+    fill: #c0cecb;
+    transition:  0.2s ease;
+
+}
+.lists_todo li .buttons .remove:hover svg .fill{
+    fill:red;
+}
+
+
+
+
+.lists_todo li .buttons .complete:before{
+    content: " ";
+    width: 1px;
+    height: 30px;
+    position: absolute;
+    top: 10px;
+    right: 50px;
+    background: #edf0f1;
+}
+
+.lists_todo li .buttons .complete svg {
+    width: 22px;
+    height: 22px;
+    border-radius: 11px;
+    border: 1.5px solid #25b99a;
+}
+.lists_todo #completed li .buttons .complete svg {
+    background: #25b99a;
+    background-origin: 0px;
+    
+}
+.lists_todo #completed li .buttons .complete svg .fill{
+    fill: white;
+}
+.lists_todo li .buttons .complete:hover svg{
+    background: #25b99a;
+    background-origin: 0px;
+    transition: 0.2s ease;
+}
+.lists_todo #completed{
+    padding: 60px 0 0 0;
+    position: relative;
+}
+
+.lists_todo #completed::before{
+   
+    content: "";
+    width: 20%;
+    height: 1px;
+    background: rgb(71, 109, 101);
+    position: absolute;
+    top:30px;
+    left: 50%;
+    margin: 0 0 0 -10%;
+
+}
+.lists_todo #completed:empty::after{
+    content: "You have yet to complete tasks...";
+    text-align: center;
+    width: 100%;
+    display: block;
+    font-size: 12px;
+    color: rgb(117, 112, 112);
+}
+
+.lists_todo #todo:empty::after{
+    content: "You have nothing to do...";
+    text-align: center;
+    width: 100%;
+    display: block;
+    font-size: 12px;
+    color: rgb(117, 112, 112);
+}
+.lists_todo li .buttons .complete:hover svg .fill{
+    fill: white;
+}
+.lists_todo li .buttons .complete svg .fill{
+   
+fill: #25b99a;
+}
+
+
